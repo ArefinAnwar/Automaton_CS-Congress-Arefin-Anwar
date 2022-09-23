@@ -15,8 +15,8 @@ void go_forward()
   digitalWrite(RearMotorRight, LOW);
   digitalWrite(FrontMotorLeft, HIGH);
   digitalWrite(FrontMotorRight, HIGH);
-  analogWrite(FrontMotorLeftSpeed, 220);
-  analogWrite(FrontMotorRightSpeed, 215 );
+  analogWrite(FrontMotorLeftSpeed, 255);
+  analogWrite(FrontMotorRightSpeed, 250 );
 }
 
 void go_left()
@@ -45,6 +45,6 @@ void reverse() {
   delay(1000);
   digitalWrite(RearMotorLeft, HIGH);
   digitalWrite(RearMotorRight, HIGH);
-  analogWrite(FrontMotorLeftSpeed, 220);
-  analogWrite(FrontMotorRightSpeed, 215 );
+  analogWrite(FrontMotorLeftSpeed, 230);
+  analogWrite(FrontMotorRightSpeed, 250 );
 }

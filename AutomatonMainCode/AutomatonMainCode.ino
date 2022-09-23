@@ -1,18 +1,18 @@
 //[Dep Starts]
-#include <TinyGPS++.h>
+//#include <TinyGPS++.h>
 #include <Adafruit_MLX90614.h>
 #include <LiquidCrystal_I2C.h>
 #include<VarSpeedServo.h>
 #include <SoftwareSerial.h>
 #include <Wire.h>
-#include <MAX30105.h>
-#include <spo2_algorithm.h>
+//#include <MAX30105.h>
+//#include <spo2_algorithm.h>
 #include <SoftwareSerial.h>
 //[Dep Starts]
 
 //[Obj Declaration Starts]
-TinyGPSPlus gps;
-MAX30105 particleSensor;
+//TinyGPSPlus gps;
+//MAX30105 particleSensor;
 SoftwareSerial bluetooth(63, 62); // RX, TX (A9, A8)
 //#define bluetooth Serial2
 //SoftwareSerial excerciseBluetooth(65, 64); // RX, TX (A11, A10)
@@ -26,6 +26,7 @@ int red = 0;
 int green = 0;
 int blue = 0;
 int flag = 0;
+int suffix = 4;
 int gasFireCheckingMode = 0;
 int colourCheckingMode = 0;
 
@@ -112,7 +113,6 @@ void loop() {
   }
 
   if (gasFireCheckingMode  == 1) {
-
     Gas_Checker();
     fire_detection();
   }
@@ -127,10 +127,10 @@ void loop() {
 
   motor();
   
-  if (millis() - timer_1 > 1000)
+  if (millis() - timer_1 > 500)
   {
-    maskSystem();
     timer_1 = millis();
+    maskSystem();
   }
 }
 

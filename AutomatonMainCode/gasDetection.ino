@@ -10,7 +10,7 @@ void Gas_Checker() {
   Serial.print("Readings: ");
   Serial.println(analogSensor);
   
-  if (analogRead(gas_sensor) > 400)
+  if (analogRead(gas_sensor) > 300)
   {
     //Serial.println("Gas Leakage!!!");
     bluetooth.print("Gas Leakage!!!");

@@ -12,7 +12,7 @@ void colourDetection()
   digitalWrite(S2, HIGH);
   green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
 
-  if (red < blue && red < green && red < 20) {
+  if (red < blue && red < green) {
     lcd.setCursor(5, 3);
     lcd.print("Red Colour");
   }
